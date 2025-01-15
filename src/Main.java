@@ -8,5 +8,7 @@ public class Main {
         List<Ereigniss> ereignissList = reader.readFromFile();
         Operation operation = new Operation(ereignissList);
         operation.filterByName('J').forEach(System.out::println);
+        System.out.println("#######");
+        operation.sortByDate().forEach(System.out::println);
     }
 }

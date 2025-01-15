@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.List;
 
 public class Operation {
@@ -11,6 +12,13 @@ public class Operation {
         return ereignissList.stream()
                 .filter(ereigniss -> ereigniss.getName().charAt(0) == initial)
                 .map(ereigniss -> ereigniss.getName())
+                .toList();
+    }
+
+    public List<String> sortByDate(){
+        return ereignissList.stream()
+                .sorted(Comparator.comparing(Ereigniss::getDatum))
+                .map(ereigniss -> new String(ereigniss.getDatum() + " : " + ereigniss.getName() + " - " + ereigniss.getEreigniss()))
                 .toList();
     }
 }
