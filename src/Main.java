@@ -10,5 +10,9 @@ public class Main {
         operation.filterByName('J').forEach(System.out::println);
         System.out.println("#######");
         operation.sortByDate().forEach(System.out::println);
+        System.out.println("######");
+        List<String[]> sortedErg = operation.sortByNumIOfErignisse();
+        Writer writer = new Writer("C:\\Proiecte\\Proiecte faculta\\Anul_2\\MAP\\Practic\\EminoviciRobert721Aufgabe1\\src\\ergebniss.tsv");
+        writer.writeToFile(sortedErg);
     }
 }
